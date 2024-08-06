@@ -162,8 +162,7 @@ export function MainProduct() {
         <Box fontSize={"xl"} fontWeight={600} mb={10}>
           {account.isLoggedIn() ? (
             <>
-              {account.nickName}
-              {account.branchName}&nbsp;님을 위한 추천메뉴
+              {account.nickName}ㅣ{account.branchName}&nbsp;님을 위한 추천메뉴
             </>
           ) : (
             <Text mt={"100px"}>추천메뉴</Text>

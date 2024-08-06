@@ -5,13 +5,14 @@ import {
   Divider,
   FormControl,
   Heading,
+  Img,
   Input,
   InputGroup,
   Text,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginContext } from "../component/LoginProvider.jsx";
 import { CustomToast } from "../component/CustomToast.jsx";
 
@@ -90,6 +91,19 @@ export function Login() {
             >
               이메일로 로그인
             </Button>
+          </Box>
+
+          <a href="http://localhost:8080/oauth2/authorization/kakao">
+            <Img
+              width={"50px"}
+              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Ft1vHi%2FbtsIiWtmqdW%2FMFrKl7D3oAVOmICc4zTVuk%2Fimg.webp"
+            />
+          </a>
+
+          <Box mt={5}>
+            <Link to={""}>
+              <Img src="/img/kakao_login_large.png" width="100px" />
+            </Link>
           </Box>
 
           <Box display="flex" mt={6}>
