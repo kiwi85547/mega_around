@@ -13,8 +13,8 @@ export function OauthSuccess() {
 
     if (token) {
       localStorage.setItem("token", token);
-
       navigate("/");
+      successToast("로그인 되었습니다");
     } else {
       successToast("가입 성공했습니다. 다시 로그인 해주세요");
       // TODO. 네비게이트 삭제
@@ -22,6 +22,5 @@ export function OauthSuccess() {
       navigate("/login");
     }
   }, [location]);
-
   return null;
 }

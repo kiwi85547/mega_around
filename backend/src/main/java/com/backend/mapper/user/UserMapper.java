@@ -163,11 +163,6 @@ public interface UserMapper {
             """)
     void deleteBranchByGeocode(Integer id);
 
-//    @Delete("""
-//            DELETE cp FROM cart_product cp JOIN cart c ON cp.cart_id = c.id WHERE c.id = #{id};
-//            """)
-//    void deleteCartProduct(Integer id);
-
     @Delete("""
             DELETE FROM cart WHERE customer_id=#{id}
             """)

@@ -313,16 +313,8 @@ public class UserService {
         // 스탬프 지우기
         eventMapper.deleteStamp(id);
 
-        // cart_product 지우기
-//        userMapper.deleteCartProduct(id);
-
         // cart 지우기
         userMapper.deleteCart(id);
-
-        // notice 지우기
-
-
-        // order-item 지우기
 
         // 고객 지우기
         userMapper.deleteCustomerById(id);

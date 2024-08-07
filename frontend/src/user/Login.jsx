@@ -108,6 +108,7 @@ export function Login() {
               // bg={"black"}
               colorScheme={"orange"}
               width={"300px"}
+              height={"45px"}
               fontSize={"14px"}
               borderRadius={"5"}
               _hover={{ backgroundColor: "gray.600" }}
@@ -116,7 +117,7 @@ export function Login() {
             </Button>
           </Center>
 
-          <Center mt={5}>
+          <Center mt={3}>
             <a href="http://localhost:8080/oauth2/authorization/kakao">
               <Img src="/img/kakao_login_medium_wide.png" />
               {/*<Img*/}
@@ -134,7 +135,7 @@ export function Login() {
 
           <Box position="relative" padding="0" mt={"30px"} mb={"30px"}>
             <Divider />
-            <AbsoluteCenter bg="white" px="4">
+            <AbsoluteCenter bg="white" px="4" fontSize={"sm"}>
               또는
             </AbsoluteCenter>
           </Box>
@@ -142,7 +143,6 @@ export function Login() {
 
           <Center>
             <Button
-              // mt={6}
               borderColor={"#fdd000"}
               variant={"outline"}
               bg={"white"}
