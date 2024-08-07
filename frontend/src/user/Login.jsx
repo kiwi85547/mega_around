@@ -1,8 +1,10 @@
 import {
+  AbsoluteCenter,
   Box,
   Button,
   Center,
   Divider,
+  Flex,
   FormControl,
   Heading,
   Img,
@@ -57,7 +59,7 @@ export function Login() {
           </Center>
           <Box mt={8}>
             <FormControl>
-              <InputGroup width={"400px"}>
+              <InputGroup width={"300px"}>
                 <Input
                   placeholder={"이메일을 입력하세요"}
                   sx={{ "::placeholder": { fontSize: "sm" } }}
@@ -68,7 +70,7 @@ export function Login() {
           </Box>
           <Box mt={3}>
             <FormControl>
-              <InputGroup width={"400px"}>
+              <InputGroup width={"300px"}>
                 <Input
                   placeholder={"비밀번호를 입력하세요"}
                   sx={{ "::placeholder": { fontSize: "sm" } }}
@@ -79,37 +81,9 @@ export function Login() {
             </FormControl>
           </Box>
 
-          <Box mt={8}>
-            <Button
-              onClick={handleCustomerLogin}
-              bg={"black"}
-              color={"white"}
-              width={"400px"}
-              fontSize={"14px"}
-              borderRadius={"40"}
-              _hover={{ backgroundColor: "gray.600" }}
-            >
-              이메일로 로그인
-            </Button>
-          </Box>
-
-          <a href="http://localhost:8080/oauth2/authorization/kakao">
-            <Img
-              width={"50px"}
-              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Ft1vHi%2FbtsIiWtmqdW%2FMFrKl7D3oAVOmICc4zTVuk%2Fimg.webp"
-            />
-          </a>
-
-          {/*<Box mt={5}>*/}
-          {/*  <Link to={""}>*/}
-          {/*    <Img src="/img/kakao_login_large.png" width="100px" />*/}
-          {/*  </Link>*/}
-          {/*</Box>*/}
-
-          <Box display="flex" mt={6}>
+          <Flex mt={6} justifyContent={"center"} gap={5}>
             <Box
-              fontSize="sm"
-              ml={"auto"}
+              fontSize="12px"
               cursor="pointer"
               as={"u"}
               color={"gray.500"}
@@ -118,9 +92,7 @@ export function Login() {
               이메일 찾기
             </Box>
             <Box
-              fontSize="sm"
-              ml={"auto"}
-              mr="80px"
+              fontSize="12px"
               cursor="pointer"
               as={"u"}
               color={"gray.500"}
@@ -128,24 +100,55 @@ export function Login() {
             >
               비밀번호 찾기
             </Box>
-          </Box>
+          </Flex>
 
-          {/*<Box position="relative" padding="10" mt={0}>*/}
-          {/*  <Divider />*/}
-          {/*  <AbsoluteCenter bg="white" px="4">*/}
-          {/*    또는*/}
-          {/*  </AbsoluteCenter>*/}
+          <Center mt={8}>
+            <Button
+              onClick={handleCustomerLogin}
+              // bg={"black"}
+              colorScheme={"orange"}
+              width={"300px"}
+              fontSize={"14px"}
+              borderRadius={"5"}
+              _hover={{ backgroundColor: "gray.600" }}
+            >
+              이메일로 로그인
+            </Button>
+          </Center>
+
+          <Center mt={5}>
+            <a href="http://localhost:8080/oauth2/authorization/kakao">
+              <Img src="/img/kakao_login_medium_wide.png" />
+              {/*<Img*/}
+              {/*  width={"50px"}*/}
+              {/*  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Ft1vHi%2FbtsIiWtmqdW%2FMFrKl7D3oAVOmICc4zTVuk%2Fimg.webp"*/}
+              {/*/>*/}
+            </a>
+          </Center>
+
+          {/*<Box mt={5}>*/}
+          {/*  <Link to={""}>*/}
+          {/*    <Img src="/img/kakao_login_large.png" width="100px" />*/}
+          {/*  </Link>*/}
           {/*</Box>*/}
-          <Divider mt={6} />
+
+          <Box position="relative" padding="0" mt={"30px"} mb={"30px"}>
+            <Divider />
+            <AbsoluteCenter bg="white" px="4">
+              또는
+            </AbsoluteCenter>
+          </Box>
+          {/*<Divider mt={6} />*/}
 
           <Center>
             <Button
-              mt={6}
+              // mt={6}
               borderColor={"#fdd000"}
               variant={"outline"}
               bg={"white"}
               color={"black"}
-              width={"200px"}
+              colorScheme={"pink"}
+              width={"300px"}
               fontSize={"14px"}
               borderRadius={"40"}
               onClick={() => navigate("/login/branch")}

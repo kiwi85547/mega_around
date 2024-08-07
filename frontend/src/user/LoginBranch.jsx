@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Center,
+  Flex,
   FormControl,
   Heading,
   Input,
@@ -56,7 +57,7 @@ export function LoginBranch() {
           </Center>
           <Box mt={8}>
             <FormControl>
-              <InputGroup width={"400px"}>
+              <InputGroup width={"300px"}>
                 <Input
                   placeholder={"이메일을 입력하세요"}
                   sx={{ "::placeholder": { fontSize: "sm" } }}
@@ -67,7 +68,7 @@ export function LoginBranch() {
           </Box>
           <Box mt={3}>
             <FormControl>
-              <InputGroup width={"400px"}>
+              <InputGroup width={"300px"}>
                 <Input
                   placeholder={"비밀번호를 입력하세요"}
                   sx={{ "::placeholder": { fontSize: "sm" } }}
@@ -80,9 +81,8 @@ export function LoginBranch() {
           <Box mt={8}>
             <Button
               onClick={handleBranchLogin}
-              bg={"#fdd000"}
-              color={"white"}
-              width={"400px"}
+              colorScheme={"orange"}
+              width={"300px"}
               fontSize={"14px"}
               borderRadius={"40"}
               _hover={{ backgroundColor: "gray.300" }}
@@ -90,10 +90,9 @@ export function LoginBranch() {
               지점 로그인
             </Button>
           </Box>
-          <Box display="flex" mt={6}>
+          <Flex justify="center" gap={5} mt={6}>
             <Box
-              fontSize="sm"
-              ml={"auto"}
+              fontSize="12px"
               cursor="pointer"
               as={"u"}
               color={"gray.500"}
@@ -102,9 +101,7 @@ export function LoginBranch() {
               이메일 찾기
             </Box>
             <Box
-              fontSize="sm"
-              ml={"auto"}
-              mr="80px"
+              fontSize="12px"
               cursor="pointer"
               as={"u"}
               color={"gray.500"}
@@ -112,7 +109,7 @@ export function LoginBranch() {
             >
               비밀번호 찾기
             </Box>
-          </Box>
+          </Flex>
         </Box>
       </Center>
     </>
