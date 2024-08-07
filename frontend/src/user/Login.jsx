@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../component/LoginProvider.jsx";
 import { CustomToast } from "../component/CustomToast.jsx";
 
@@ -100,11 +100,11 @@ export function Login() {
             />
           </a>
 
-          <Box mt={5}>
-            <Link to={""}>
-              <Img src="/img/kakao_login_large.png" width="100px" />
-            </Link>
-          </Box>
+          {/*<Box mt={5}>*/}
+          {/*  <Link to={""}>*/}
+          {/*    <Img src="/img/kakao_login_large.png" width="100px" />*/}
+          {/*  </Link>*/}
+          {/*</Box>*/}
 
           <Box display="flex" mt={6}>
             <Box

@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { CustomToast } from "./component/CustomToast.jsx";
+import { CustomToast } from "../component/CustomToast.jsx";
 
 export function OauthSuccess() {
   const location = useLocation();

@@ -32,7 +32,7 @@ import { FindBranchEmail } from "./user/FindBranchEmail.jsx";
 import "./fonts.css";
 import { CartProductComp } from "./cart/component/CartProductComp.jsx";
 import { MyPageAdmin } from "./user/MyPageAdmin.jsx";
-import { OauthSuccess } from "./OauthSuccess.jsx";
+import { OauthSuccess } from "./user/OauthSuccess.jsx";
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
