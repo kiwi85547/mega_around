@@ -1,34 +1,18 @@
 package com.backend.controller.user;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.oauth2.core.user.OAuth2User;
-
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Map;
 
-public class KakaoUserDetails implements OAuth2User {
-
-    private final Map<String, Object> attributes;
+public class KakaoUserDetails {
+    private Map<String, Object> attributes;
+    private Map<String, Object> profileAttributes;
 
     public KakaoUserDetails(Map<String, Object> attributes) {
-        this.attributes = attributes;
+        this.attributes = (Map<String, Object>) attributes.get("kakao_account");
+        this.profileAttributes = (Map<String, Object>) this.attributes.get("profile");
     }
 
-    @Override
-    public Map<String, Object> getAttributes() {
-        return attributes;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
-    }
-
-    @Override
-    public String getName() {
-        return attributes.get("id").toString();
+    public String getEmail() {
+        return (String) attributes.get("email");
     }
 
     public String getProvider() {
@@ -36,14 +20,11 @@ public class KakaoUserDetails implements OAuth2User {
     }
 
     public String getProviderId() {
-        return attributes.get("id").toString();
-    }
-
-    public String getEmail() {
-        return (String) ((Map<?, ?>) attributes.get("kakao_account")).get("email");
+        return (String) attributes.get("id");
     }
 
     public String getNickName() {
-        return (String) ((Map<?, ?>) attributes.get("properties")).get("nickname");
+        return (String) profileAttributes.get("nickname");
     }
+
 }

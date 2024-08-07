@@ -68,3 +68,12 @@ WHERE customer_id = 21
 GROUP BY tag;
 
 DELETE cp FROM cart_product cp JOIN cart c ON cp.cart_id = c.id WHERE c.id = #{id};
+
+SELECT *
+FROM customer;
+
+DELETE FROM customer
+WHERE id = 42;
+
+DELETE FROM coupon
+WHERE customer_id = 42;
