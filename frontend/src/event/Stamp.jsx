@@ -29,17 +29,19 @@ function Stamp(props) {
       axios.get("/api/notice/stamp").then((res) => {
         function createDate(data) {
           const result = [];
-          for (let i = count - 1; i >= 0; i--) {
+          for (let i = data.length - 1; i >= 0; i--) {
             const item = data[i];
             const arr = item.content.split(" ");
-            const count = parseInt(arr[1].replace("개", ""));
-            for (let j = 0; j < count; j++) {
+            let newCount = 0;
+            if (arr[2] === "적립되었습니다") {
+              newCount = parseInt(arr[1].replace("개", ""));
+            }
+            for (let j = 0; j < newCount; j++) {
               result.push(item.createdAtString);
             }
           }
           return result;
         }
-
         const date = createDate(res.data);
         setStampDate(date);
       });

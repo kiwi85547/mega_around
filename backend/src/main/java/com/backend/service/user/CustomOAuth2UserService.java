@@ -61,8 +61,6 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
             String token = jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
 
-            System.out.println("token = " + token);
-
             String redirectUri = STR."http://localhost:5173/auth?token=\{token}";
             try {
                 httpServletResponse.sendRedirect(redirectUri);
